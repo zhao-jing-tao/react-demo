@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Button } from 'antd'
 import styled from 'styled-components'
-import Login from '@/services'
+import Login from './services/index'
 const StyledDiv = styled.div`
   color: red;
   font-size: 20px;
 `
 const App = () => {
   const login = useCallback(async () => {
-    // const res = await Login.login()
-    console.log('res')
+    const res = await Login.long()
+    console.log(res, 'res')
   }, [])
 
   return (
