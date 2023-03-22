@@ -9,8 +9,14 @@ const App = () => <>{useRoutes(routes)}</>
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <ConfigProvider locale={zhCN}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    {window.location.host.indexOf('localhost') > -1 ? (
+      <HashRouter>
+        <App />
+      </HashRouter>
+    ) : (
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    )}
   </ConfigProvider>
 )
